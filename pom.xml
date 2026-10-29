@@ -18,6 +18,8 @@
 
     <properties>
         <java.version>17</java.version>
+        <!-- Byte Buddy 1.14 (padrão do Boot 3.3) não suporta Java 25: sem isso o Mockito falha ao criar mocks -->
+        <byte-buddy.version>1.17.7</byte-buddy.version>
     </properties>
 
     <dependencies>
