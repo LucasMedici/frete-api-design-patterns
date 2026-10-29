@@ -70,11 +70,13 @@ Controller ──► FreteFacade ──┬──► ViaCepService (API externa)
 
 ## ▶️ Como rodar
 
-Pré-requisitos: **Java 17+** e **Maven** (ou abrir o projeto direto no IntelliJ / VS Code).
+Pré-requisito: **Java 17+**. Não é preciso instalar o Maven: o projeto inclui o Maven Wrapper (`mvnw`). Também dá para abrir direto no IntelliJ / VS Code.
 
 ```bash
-mvn spring-boot:run
+./mvnw spring-boot:run
 ```
+
+No Windows, use `mvnw.cmd` no lugar de `./mvnw`.
 
 Depois acesse:
 
@@ -84,14 +86,14 @@ Depois acesse:
 Para rodar os testes:
 
 ```bash
-mvn test
+./mvnw test
 ```
 
 ## 📡 Endpoints
 
 | Método | Rota | Descrição |
 |---|---|---|
-| `POST` | `/fretes` | Cota um frete e salva no histórico |
+| `POST` | `/fretes` | Cota um frete e salva no histórico (retorna `201 Created`) |
 | `GET` | `/fretes/comparar?cep=&pesoKg=` | Simula todos os tipos, do mais barato ao mais caro |
 | `GET` | `/fretes` | Histórico de cotações |
 | `GET` | `/fretes/tipos` | Tipos de frete disponíveis |
